@@ -76,7 +76,7 @@ Track information when you're on the run, and share it with your friends. RunnR 
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://i.ibb.co/1fn0Wcp/IMG-0706.jpg" width=600>
 
 ## Schema 
 [This section will be completed in Unit 9]
