@@ -16,11 +16,11 @@ Track information when you're on the run, and share it with your friends. RunnR 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - **Category:** Fitness
-- **Mobile:** Mobile only
-- **Story:** Allows users to track their runs and share them with others simutainiously
-- **Market:** Anyone who runs and enjoys sharing on social media
+- **Mobile:** Mobile only. 
+- **Story:** Allows users to track their runs and share them with others. Provides aggregate data about themselves  
+- **Market:** Anyone who wants to log their runs or wants a social media for running data about themselves or others. 
 - **Habit:** Running is routine exercise for many people. With RunnR, users can get indepth information about their runs, encouraging them to run more and share their activity with others. 
-- **Scope:** Narrow focus. Run, Social Media, and user accounts all pilled into one. Since location is central in the application, it has much to be expanded on. For example, sharing your location with friends while running could be safer for users.
+- **Scope:** Narrow focus. Run, Social Media, and user accounts all pilled into one. Since location is central in the application, it has much to be expanded on. For example, sharing location with selected friends during runs can be used as a saftey feature for users.
 
 ## Product Spec
 
