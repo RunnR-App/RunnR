@@ -79,10 +79,72 @@ Track information when you're on the run, and share it with your friends. RunnR 
 <img src="https://i.ibb.co/1fn0Wcp/IMG-0706.jpg" width=600>
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+
+#### Post
+| Property | Type | Description |
+| -------- | -------- | -------- |
+| objectId     | String     | unique id for the user post (default)|
+| author     | Pointer to User     | Link to post |
+| image     | File     | Optional for post     |
+| description     | String     | User or generated text     |
+| distance     | Number     | Number of miles ran     |
+| time     | DateTime     | Time spent on run     |
+| createdAt     | DateTime     | Creation of post(default)     |
+| updatedAt     | DateTime     | Last updated (default)     |
+
 ### Networking
 - [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
+- PFUser
+    - (Create/POST) Sign Up
+    ```
+    func onLogin() {
+      var user = PFUser()
+      user.username = "myUsername"
+      user.password = "myPassword"
+
+      // other fields can be set just like with PFObject
+      user["phone"] = "415-392-0202"
+
+      user.signUpInBackground {
+        (succeeded: Bool, error: Error?) -> Void in
+        if let error = error {
+          let errorString = error.localizedDescription
+          // Show the errorString somewhere and let the user try again.
+        } else {
+          // Hooray! Let them use the app now.
+        }
+      }
+    }
+    ```
+    - (Read/GET) Login with cridentials
+    ```
+    PFUser.logInWithUsername(inBackground:"myname", password:"mypass") {
+      (user: PFUser?, error: Error?) -> Void in
+      if user != nil {
+        self.performSeque(withIdentifier: "loginSegue", sender:nil)
+      } else {
+        // The login failed. Check error to see why.
+      }
+    }
+    ```
+- Home Feed
+    - (Create/POST) Post a run
+    - (Delete) Remove posted run
+- Profile Screen
+    - (Read/GET) Query all posts where user is author
+    ```
+    let query = PFQuery(className:"Location")
+    query.whereKey("author", equalTo: currentUser)
+    query.order(byDescending: "createdAt")
+    query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+       if let error = error { 
+          print(error.localizedDescription)
+       } else if let posts = posts {
+          print("Successfully retrieved \(posts.count) posts.")
+      // TODO: Do something with posts...
+       }
+    }
+
+    ```
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
