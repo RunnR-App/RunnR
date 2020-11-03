@@ -130,7 +130,42 @@ Track information when you're on the run, and share it with your friends. RunnR 
     ```
 - Home Feed
     - (Create/POST) Post a run
+    ```
+    func onCompleteRun(sender: Any){
+        let post = PFObject(classname: "Posts")
+        
+        post["description"] = commentField.text!
+        .
+        .    // store our data
+        .
+        
+        post.saveInBackground()
+    }
+    ```
     - (Delete) Remove posted run
+    ```
+    let query = PFQuery(className: "Posts")
+    query.whereKey("objectId", equalTo: currentCellId)
+    query.findObjectInBackgroundWithBlock{
+        (object: Any, error: NSError?) -> Void in
+            object.deleteEventually()
+    } 
+    
+    ```
+    - (Read/GET) Friend activity for main feed
+    ```
+    let query = PFQuery(className:"Location")
+    query.whereKey("author", containedin: self.friends)
+    query.order(byDescending: "createdAt")
+    query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+       if let error = error { 
+          print(error.localizedDescription)
+       } else if let posts = posts {
+          print("Successfully retrieved \(posts.count) posts.")
+      // TODO: Do something with posts...
+       }
+    }
+    ```
 - Profile Screen
     - (Read/GET) Query all posts where user is author
     ```
@@ -145,6 +180,4 @@ Track information when you're on the run, and share it with your friends. RunnR 
       // TODO: Do something with posts...
        }
     }
-
     ```
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
