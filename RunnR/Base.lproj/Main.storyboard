@@ -77,7 +77,7 @@
                     <connections>
                         <outlet property="passwordField" destination="BaB-q9-Obi" id="wj0-hY-bkk"/>
                         <outlet property="usernameField" destination="GbI-7X-J2h" id="TFh-jQ-gsy"/>
-                        <segue destination="DHF-wy-fGb" kind="presentation" identifier="loginSegue" id="ra7-gu-lq6"/>
+                        <segue destination="DHF-wy-fGb" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="ra7-gu-lq6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,9 +89,20 @@
             <objects>
                 <viewController id="uof-9J-kuk" customClass="MapViewController" customModule="RunnR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zC6-3K-YDp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kze-7a-7vP">
+                                <rect key="frame" x="0.0" y="32" width="414" height="864"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kX8-h1-I66" firstAttribute="bottom" secondItem="kze-7a-7vP" secondAttribute="bottom" constant="-34" id="G3h-yq-OBW"/>
+                            <constraint firstItem="kX8-h1-I66" firstAttribute="trailing" secondItem="kze-7a-7vP" secondAttribute="trailing" id="MJP-WP-L4e"/>
+                            <constraint firstItem="kze-7a-7vP" firstAttribute="top" secondItem="kX8-h1-I66" secondAttribute="top" constant="-56" id="e1M-Kf-Kz7"/>
+                            <constraint firstItem="kze-7a-7vP" firstAttribute="leading" secondItem="kX8-h1-I66" secondAttribute="leading" id="pgF-gJ-PGM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kX8-h1-I66"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="GnH-rD-6Jt">
@@ -101,10 +112,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="kze-7a-7vP" id="4Yd-Jj-cvi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QA1-8g-oZD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1826" y="118"/>
+            <point key="canvasLocation" x="1824.6376811594205" y="117.85714285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WLu-3i-LpE">
@@ -112,7 +126,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DHF-wy-fGb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f1g-Px-B19">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

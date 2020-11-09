@@ -8,12 +8,16 @@
 
 import UIKit
 import Parse
+import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -24,14 +28,54 @@ class MapViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    let locationManager = CLLocationManager()
+    
+    func setupLocationManager(){
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
-    */
+    
+    func checkLocationServices(){
+        if CLLocationManager.locationServicesEnabled(){
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            // Tell the user that their location services are disabled
+            print("Location services are disabled.")
+        }
+    }
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus(){
+        case .authorizedWhenInUse:
+            // Everything checks out
+            print("Show User Location Activated!")
+            mapView.showsUserLocation = true
+            break
+        case .denied:
+            // Show alert and instruct
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            break
+        case .restricted:
+            // User has parental controls denying location
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            fatalError()
+        }
+    }
 
+}
+
+extension MapViewController: CLLocationManagerDelegate{
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // Later
+    }
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        // Later
+    }
 }
