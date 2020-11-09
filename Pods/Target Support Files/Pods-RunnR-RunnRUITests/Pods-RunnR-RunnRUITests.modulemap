@@ -1,0 +1,6 @@
+framework module Pods_RunnR_RunnRUITests {
+  umbrella header "Pods-RunnR-RunnRUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
