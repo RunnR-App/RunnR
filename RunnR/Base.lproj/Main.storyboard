@@ -35,8 +35,22 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BaB-q9-Obi">
                                 <rect key="frame" x="20" y="400" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifx-N1-iQu">
+                                <rect key="frame" x="30" y="454" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sr1-W2-FCA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcF-f5-zDu">
+                                <rect key="frame" x="340" y="454" width="54" height="30"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZiS-gA-5Br"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -45,32 +59,48 @@
                             <constraint firstItem="BaB-q9-Obi" firstAttribute="top" secondItem="B6y-TD-9Yh" secondAttribute="bottom" constant="10" id="8gM-gc-cIo"/>
                             <constraint firstItem="B6y-TD-9Yh" firstAttribute="top" secondItem="GbI-7X-J2h" secondAttribute="bottom" constant="40" id="DcD-5I-f5t"/>
                             <constraint firstItem="GbI-7X-J2h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="DmJ-xI-QYJ"/>
+                            <constraint firstItem="tcF-f5-zDu" firstAttribute="top" secondItem="BaB-q9-Obi" secondAttribute="bottom" constant="20" id="IIx-zH-eMl"/>
+                            <constraint firstItem="Ifx-N1-iQu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Itp-6w-ZJd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B6y-TD-9Yh" secondAttribute="trailing" constant="243" id="Lb6-5H-K7V"/>
                             <constraint firstItem="EAn-VU-D1X" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SyQ-IU-fjl"/>
                             <constraint firstItem="EAn-VU-D1X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="220" id="VtB-Wz-bL4"/>
                             <constraint firstItem="GbI-7X-J2h" firstAttribute="top" secondItem="EAn-VU-D1X" secondAttribute="bottom" constant="10" id="Zij-Rb-7BM"/>
+                            <constraint firstItem="Ifx-N1-iQu" firstAttribute="top" secondItem="BaB-q9-Obi" secondAttribute="bottom" constant="20" id="fnu-CQ-CbV"/>
+                            <constraint firstItem="tcF-f5-zDu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ifx-N1-iQu" secondAttribute="trailing" constant="8" symbolic="YES" id="hNv-wg-V9I"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EAn-VU-D1X" secondAttribute="trailing" constant="243" id="izj-cf-nm0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tcF-f5-zDu" secondAttribute="trailing" constant="20" id="udR-7U-1Lg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GbI-7X-J2h" secondAttribute="trailing" constant="20" id="vKx-5Q-4VO"/>
                             <constraint firstItem="B6y-TD-9Yh" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xOB-nk-DNq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="BaB-q9-Obi" id="wj0-hY-bkk"/>
+                        <outlet property="usernameField" destination="GbI-7X-J2h" id="TFh-jQ-gsy"/>
+                        <segue destination="DHF-wy-fGb" kind="presentation" identifier="loginSegue" id="ra7-gu-lq6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Map-->
         <scene sceneID="bX4-Pl-QLV">
             <objects>
-                <viewController id="uof-9J-kuk" customClass="FeedViewController" customModule="RunnR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uof-9J-kuk" customClass="MapViewController" customModule="RunnR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zC6-3K-YDp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="kX8-h1-I66"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GnH-rD-6Jt"/>
+                    <navigationItem key="navigationItem" title="Map" id="GnH-rD-6Jt">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="kh1-CR-Yi6">
+                            <connections>
+                                <action selector="onLogout:" destination="uof-9J-kuk" id="h0I-AC-zVt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QA1-8g-oZD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,7 +112,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DHF-wy-fGb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f1g-Px-B19">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

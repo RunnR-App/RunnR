@@ -10,7 +10,7 @@
 		2B155EC1BF8747A3545672DF /* Pods_RunnR_RunnRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A876A0D316EF6DB67FDF133 /* Pods_RunnR_RunnRUITests.framework */; };
 		56396404A5B99C8B8530F7BE /* Pods_RunnR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF653968E047BF1B5933CB2D /* Pods_RunnR.framework */; };
 		A87943B72554975800A67F28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87943B62554975800A67F28 /* LoginViewController.swift */; };
-		A87943B92554976400A67F28 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87943B82554976400A67F28 /* FeedViewController.swift */; };
+		A8D31C202559FF9C007B00B6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D31C1F2559FF9C007B00B6 /* MapViewController.swift */; };
 		A8E9571A25549550008E15AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9571925549550008E15AD /* AppDelegate.swift */; };
 		A8E9571C25549550008E15AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9571B25549550008E15AD /* SceneDelegate.swift */; };
 		A8E9572125549550008E15AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8E9571F25549550008E15AD /* Main.storyboard */; };
@@ -46,7 +46,7 @@
 		4A876A0D316EF6DB67FDF133 /* Pods_RunnR_RunnRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunnR_RunnRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32B0EDF323D09D5369E989C /* Pods-RunnR-RunnRUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnR-RunnRUITests.release.xcconfig"; path = "Target Support Files/Pods-RunnR-RunnRUITests/Pods-RunnR-RunnRUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A87943B62554975800A67F28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A87943B82554976400A67F28 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		A8D31C1F2559FF9C007B00B6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A8E9571625549550008E15AD /* RunnR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunnR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E9571925549550008E15AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8E9571B25549550008E15AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 				A8E9572425549553008E15AD /* LaunchScreen.storyboard */,
 				A8E9572725549553008E15AD /* Info.plist */,
 				A87943B62554975800A67F28 /* LoginViewController.swift */,
-				A87943B82554976400A67F28 /* FeedViewController.swift */,
+				A8D31C1F2559FF9C007B00B6 /* MapViewController.swift */,
 			);
 			path = RunnR;
 			sourceTree = "<group>";
@@ -412,8 +412,8 @@
 			files = (
 				A87943B72554975800A67F28 /* LoginViewController.swift in Sources */,
 				A8E9571A25549550008E15AD /* AppDelegate.swift in Sources */,
-				A87943B92554976400A67F28 /* FeedViewController.swift in Sources */,
 				A8E9571C25549550008E15AD /* SceneDelegate.swift in Sources */,
+				A8D31C202559FF9C007B00B6 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
