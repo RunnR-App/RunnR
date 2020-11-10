@@ -28,18 +28,18 @@ Track information when you're on the run, and share it with your friends. RunnR 
 
 **Required Must-have Stories**
 
-- Create an account / login
-- User can start and stop a run 
-- Data about user personal activity / exersises
-- User can add friends
-- User can see friends recent workouts
-- User can compare workout info with their friends
+- [x] Create an account / login
+- [ ] User can start and stop a run 
+- [ ] Data about user personal activity / exersises
+- [ ] User can add friends
+- [ ] User can see friends recent workouts
+- [ ] User can compare workout info with their friends
 
 **Optional Nice-to-have Stories**
 
-- User level. Complete objectives during workouts
-- User data privacy
-- Run sharing. Add friends to your runs, 
+- [ ] User level. Complete objectives during workouts
+- [ ] User data privacy
+- [ ] Run sharing. Add friends to your runs, 
 
 ### 2. Screen Archetypes
 
