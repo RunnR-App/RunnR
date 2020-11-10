@@ -185,3 +185,5 @@ Track information when you're on the run, and share it with your friends. RunnR 
 - [x] Application connected to parse
 - [x] Login/Signup
 - [x] Basic MapKit implementation
+
+<img src="http://g.recordit.co/I1A6xqzloR.gif" width=250><br>
