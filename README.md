@@ -181,3 +181,7 @@ Track information when you're on the run, and share it with your friends. RunnR 
        }
     }
     ```
+## Sprint 1:
+- [x] Application connected to parse
+- [x] Login/Signup
+- [x] Basic MapKit implementation
