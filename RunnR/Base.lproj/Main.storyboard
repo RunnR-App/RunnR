@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,14 +39,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifx-N1-iQu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifx-N1-iQu">
                                 <rect key="frame" x="30" y="454" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sr1-W2-FCA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcF-f5-zDu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcF-f5-zDu">
                                 <rect key="frame" x="340" y="454" width="54" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
@@ -52,7 +54,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BaB-q9-Obi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5k3-g0-KDp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BaB-q9-Obi" secondAttribute="trailing" constant="20" id="7kS-NA-wUE"/>
@@ -72,38 +75,37 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GbI-7X-J2h" secondAttribute="trailing" constant="20" id="vKx-5Q-4VO"/>
                             <constraint firstItem="B6y-TD-9Yh" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xOB-nk-DNq"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="BaB-q9-Obi" id="wj0-hY-bkk"/>
                         <outlet property="usernameField" destination="GbI-7X-J2h" id="TFh-jQ-gsy"/>
-                        <segue destination="DHF-wy-fGb" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="ra7-gu-lq6"/>
+                        <segue destination="DHF-wy-fGb" kind="presentation" identifier="loginSegue" id="Zeo-dc-0F5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+            <point key="canvasLocation" x="16" y="118"/>
         </scene>
         <!--Map-->
         <scene sceneID="bX4-Pl-QLV">
             <objects>
                 <viewController id="uof-9J-kuk" customClass="MapViewController" customModule="RunnR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zC6-3K-YDp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kze-7a-7vP">
-                                <rect key="frame" x="0.0" y="32" width="414" height="864"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kze-7a-7vP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kX8-h1-I66"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kX8-h1-I66" firstAttribute="bottom" secondItem="kze-7a-7vP" secondAttribute="bottom" constant="-34" id="G3h-yq-OBW"/>
                             <constraint firstItem="kX8-h1-I66" firstAttribute="trailing" secondItem="kze-7a-7vP" secondAttribute="trailing" id="MJP-WP-L4e"/>
                             <constraint firstItem="kze-7a-7vP" firstAttribute="top" secondItem="kX8-h1-I66" secondAttribute="top" constant="-56" id="e1M-Kf-Kz7"/>
                             <constraint firstItem="kze-7a-7vP" firstAttribute="leading" secondItem="kX8-h1-I66" secondAttribute="leading" id="pgF-gJ-PGM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="kX8-h1-I66"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="GnH-rD-6Jt">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="kh1-CR-Yi6">
@@ -126,7 +128,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DHF-wy-fGb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f1g-Px-B19">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -139,4 +141,9 @@
             <point key="canvasLocation" x="949" y="118"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

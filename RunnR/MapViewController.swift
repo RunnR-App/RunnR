@@ -17,7 +17,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        checkLocationServices()
         // Do any additional setup after loading the view.
     }
     
@@ -34,7 +34,12 @@ class MapViewController: UIViewController {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
-    
+    func centerViewOnUserLocation(){
+        if let location = locationManager.location?.coordinate{
+            let reigon = MKCoordinateRegion.init(center: location, latitudinalMeters: 1000, longitudinalMeters: 1000)
+            mapView.setRegion(reigon, animated: true)
+        }
+    }
     func checkLocationServices(){
         if CLLocationManager.locationServicesEnabled(){
             setupLocationManager()
@@ -51,6 +56,7 @@ class MapViewController: UIViewController {
             // Everything checks out
             print("Show User Location Activated!")
             mapView.showsUserLocation = true
+            centerViewOnUserLocation()
             break
         case .denied:
             // Show alert and instruct
