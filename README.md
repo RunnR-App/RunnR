@@ -30,7 +30,7 @@ Track information when you're on the run, and share it with your friends. RunnR 
 
 - [x] Create an account / login
 - [ ] User can start and stop a run 
-- [ ] Data about user personal activity / exersises
+- [x] Data about user personal activity / exersises
 - [ ] User can add friends
 - [ ] User can see friends recent workouts
 - [ ] User can compare workout info with their friends
