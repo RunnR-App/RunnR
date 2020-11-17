@@ -187,3 +187,12 @@ Track information when you're on the run, and share it with your friends. RunnR 
 - [x] Basic MapKit implementation
 
 <img src="http://g.recordit.co/I1A6xqzloR.gif" width=250><br>
+
+## Sprint 2:
+ - [x] Configured mapview location permissions
+ - [x] Configured Parse Database schema / loaded fake data
+ - [x] Zoom in on user location
+ 
+ <img src="http://g.recordit.co/KEzGEtAu7f.gif" width=250><br>
+ This gif was recorded on a virtual machine.
+ 
