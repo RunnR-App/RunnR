@@ -196,3 +196,8 @@ Track information when you're on the run, and share it with your friends. RunnR 
  <img src="http://g.recordit.co/KEzGEtAu7f.gif" width=250><br>
  This gif was recorded on a virtual machine.
  
+ ## Sprint 3:
+  - [x] Created table view setup for entire app
+  <img src="http://g.recordit.co/WXvYWWTxlj.gif" width=250><br>
+ http://g.recordit.co/WXvYWWTxlj.gif
+ 
