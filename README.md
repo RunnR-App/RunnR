@@ -198,5 +198,5 @@ Track information when you're on the run, and share it with your friends. RunnR 
  
  ## Sprint 3:
   - [x] Created table view setup for entire app
-  <img src="http://g.recordit.co/WXvYWWTxlj.gif" width=250><br>
+  <br><img src="http://g.recordit.co/WXvYWWTxlj.gif" width=250><br>
  
