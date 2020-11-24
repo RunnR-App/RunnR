@@ -30,7 +30,7 @@ Track information when you're on the run, and share it with your friends. RunnR 
 
 - [x] Create an account / login
 - [ ] User can start and stop a run 
-- [ ] Data about user personal activity / exersises
+- [x] Data about user personal activity / exersises
 - [ ] User can add friends
 - [ ] User can see friends recent workouts
 - [ ] User can compare workout info with their friends
@@ -187,3 +187,16 @@ Track information when you're on the run, and share it with your friends. RunnR 
 - [x] Basic MapKit implementation
 
 <img src="http://g.recordit.co/I1A6xqzloR.gif" width=250><br>
+
+## Sprint 2:
+ - [x] Configured mapview location permissions
+ - [x] Configured Parse Database schema / loaded fake data
+ - [x] Zoom in on user location
+ 
+ <img src="http://g.recordit.co/KEzGEtAu7f.gif" width=250><br>
+ This gif was recorded on a virtual machine.
+ 
+ ## Sprint 3:
+  - [x] Created table view setup for entire app
+  <br><img src="http://g.recordit.co/WXvYWWTxlj.gif" width=250><br>
+ 
