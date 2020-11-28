@@ -15,12 +15,37 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var runButton: RunButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
+        
+        runButton.backgroundColor = UIColor.green
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onClick(_ sender: Any) {
+        if (!runButton.isRunning){
+            // The user is starting a run
+            
+            
+            //Get start time
+            //Get starting coordinates
+            //etc
+        } else {
+            // The user is ending a run
+            
+            // Get finish time
+            // Get finish coordinates
+            // etc
+            
+            // Finalize entry in database
+        }
+        
+        
+        runButton.changeStatus()
+    }
     @IBAction func onLogout(_ sender: Any) {
         
         PFUser.logOutInBackground()
