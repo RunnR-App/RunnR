@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2B155EC1BF8747A3545672DF /* Pods_RunnR_RunnRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A876A0D316EF6DB67FDF133 /* Pods_RunnR_RunnRUITests.framework */; };
 		56396404A5B99C8B8530F7BE /* Pods_RunnR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF653968E047BF1B5933CB2D /* Pods_RunnR.framework */; };
-		A83CCDA62571F37E0027E03A /* RunTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83CCDA52571F37E0027E03A /* RunTableViewController.swift */; };
 		A83CCDA82571F3F20027E03A /* RunTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83CCDA72571F3F20027E03A /* RunTableViewCell.swift */; };
 		A83CCDAA2571F8EF0027E03A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83CCDA92571F8EF0027E03A /* ProfileViewController.swift */; };
 		A83CCDAC2571FFA70027E03A /* RunButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83CCDAB2571FFA70027E03A /* RunButton.swift */; };
@@ -51,7 +50,6 @@
 		49C1C2BAF1A42E5410C0F72A /* Pods-RunnRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnRTests.release.xcconfig"; path = "Target Support Files/Pods-RunnRTests/Pods-RunnRTests.release.xcconfig"; sourceTree = "<group>"; };
 		4A876A0D316EF6DB67FDF133 /* Pods_RunnR_RunnRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunnR_RunnRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32B0EDF323D09D5369E989C /* Pods-RunnR-RunnRUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnR-RunnRUITests.release.xcconfig"; path = "Target Support Files/Pods-RunnR-RunnRUITests/Pods-RunnR-RunnRUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A83CCDA52571F37E0027E03A /* RunTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTableViewController.swift; sourceTree = "<group>"; };
 		A83CCDA72571F3F20027E03A /* RunTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTableViewCell.swift; sourceTree = "<group>"; };
 		A83CCDA92571F8EF0027E03A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A83CCDAB2571FFA70027E03A /* RunButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunButton.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 				A8E9572725549553008E15AD /* Info.plist */,
 				A87943B62554975800A67F28 /* LoginViewController.swift */,
 				A8D31C1F2559FF9C007B00B6 /* MapViewController.swift */,
-				A83CCDA52571F37E0027E03A /* RunTableViewController.swift */,
 				A83CCDA72571F3F20027E03A /* RunTableViewCell.swift */,
 				A83CCDA92571F8EF0027E03A /* ProfileViewController.swift */,
 				A83CCDAB2571FFA70027E03A /* RunButton.swift */,
@@ -436,7 +433,6 @@
 				A83CCDAC2571FFA70027E03A /* RunButton.swift in Sources */,
 				A83CCDA82571F3F20027E03A /* RunTableViewCell.swift in Sources */,
 				A83CCDAA2571F8EF0027E03A /* ProfileViewController.swift in Sources */,
-				A83CCDA62571F37E0027E03A /* RunTableViewController.swift in Sources */,
 				A8D31C202559FF9C007B00B6 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

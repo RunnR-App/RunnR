@@ -23,6 +23,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         checkLocationServices()
         mapView.delegate = self
+        centerViewOnUserLocation()
         
         runButton.backgroundColor = UIColor.green
         // Do any additional setup after loading the view.
@@ -30,8 +31,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var sourceCord: CLLocationCoordinate2D?
     var destCord: CLLocationCoordinate2D?
-    
-    var currentDistance: Double?
     
     @IBAction func onClick(_ sender: Any) {
         if (!runButton.isRunning){
@@ -50,19 +49,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             // Get finish coordinates
             destCord = locationManager.location?.coordinate
+            
             drawMap()
-            // etc
-            
-            // Finalize entry in database
-            
-            let run = PFObject(className: "Runs")
-            
-            run["author"] = PFUser.current()!
-            //run["miles"] = currentDistance
-            run["content"] = "  just ran 7 miles"
-            // run["time"] = finish - start
-            
-            run.saveInBackground()
         }
         
         
@@ -83,18 +71,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         dir.requestsAlternateRoutes = true
         
         let directions = MKDirections(request: dir)
+        
         directions.calculate { (response, error) in
-            guard let response = response else {
-                if error != nil {
-                    print("Calculation error")
-                }
-                return
-            }
+            guard let response = response else {return}
             
             let route = response.routes[0]
-            //self.currentDistance = route.distance * 0.000621371
             self.mapView.addOverlay(route.polyline)
             self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+            
+            let run = PFObject(className: "Runs")
+            run["author"] = PFUser.current()!
+            let distInMiles = route.distance * 0.000621371
+            run["miles"] = distInMiles
+            run["content"] = String(format: "   just ran %.2f miles!", distInMiles)
+
+            // run["time"] = finish - start
+            
+            run.saveInBackground()
         }
         
         
