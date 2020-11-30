@@ -105,7 +105,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             run["author"] = PFUser.current()!
             //run["miles"] = currentDistance
-            run["content"] = "  just ran \(String(describing: currentDistance)) miles"
+            run["content"] = "  just ran 7 miles"
             
             run.saveInBackground()
         }
@@ -137,7 +137,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             }
             
             let route = response.routes[0]
-            self.currentDistance = route.distance * 0.000621371 
+            //self.currentDistance = route.distance * 0.000621371
             self.mapView.addOverlay(route.polyline)
             self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
         }
