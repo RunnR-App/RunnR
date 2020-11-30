@@ -31,6 +31,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var sourceCord: CLLocationCoordinate2D?
     var destCord: CLLocationCoordinate2D?
+    var startTime: NSDate?
     
     @IBAction func onClick(_ sender: Any) {
         if (!runButton.isRunning){
@@ -40,17 +41,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             centerViewOnUserLocation()
             //Get starting coordinates
             sourceCord = locationManager.location?.coordinate
+            startTime = NSDate()
             //Get start time
             
         } else {
             // The user is ending a run
-            
-            // Get finish time
-            
-            // Get finish coordinates
             destCord = locationManager.location?.coordinate
             
             drawMap()
+            // draw map func does everything needed to complete run and post to db
+            // does all the final calcualtions for distance and time after response
+            
         }
         
         
@@ -63,6 +64,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let sourceItem = MKMapItem(placemark: sourcePlaceMark)
         let destItem = MKMapItem(placemark: destPlaceMark)
+        
+        // get finish time
         
         let dir = MKDirections.Request()
         dir.source = sourceItem
@@ -81,11 +84,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             let run = PFObject(className: "Runs")
             run["author"] = PFUser.current()!
+            
+            // run["time"] = finish - start
+            let timeInterval: Double = self.startTime!.timeIntervalSinceNow
+            let timeInHours = abs(timeInterval) * 0.00027778    // seconds to hours
+            
+            run["finishedAt"] = timeInHours
+            
+            // calculate distance
             let distInMiles = route.distance * 0.000621371
             run["miles"] = distInMiles
-            run["content"] = String(format: "   just ran %.2f miles!", distInMiles)
-
-            // run["time"] = finish - start
+            
+            let mph: Double = distInMiles / timeInHours
+            run["mph"] = mph
+            
+            run["content"] = String(format: "   just ran %.2f miles. Average speed: %.2f mph.", distInMiles, mph)
             
             run.saveInBackground()
         }
