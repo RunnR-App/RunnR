@@ -28,51 +28,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // Do any additional setup after loading the view.
     }
     
-    func setupLocationManager(){
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    //        locationManager.distanceFilter = kCLDistanceFilterNone
-    }
-    func centerViewOnUserLocation(){
-        if let location = locationManager.location?.coordinate{
-            let reigon = MKCoordinateRegion.init(center: location, latitudinalMeters: 500, longitudinalMeters: 500)
-            mapView.setRegion(reigon, animated: true)
-        }
-    }
-    func checkLocationServices(){
-        if CLLocationManager.locationServicesEnabled(){
-            setupLocationManager()
-            checkLocationAuthorization()
-        } else {
-            // Tell the user that their location services are disabled
-            print("Location services are disabled.")
-        }
-    }
-
-    func checkLocationAuthorization() {
-        switch CLLocationManager.authorizationStatus(){
-        case .authorizedWhenInUse:
-            // Everything checks out
-            print("Show User Location Activated!")
-            mapView.showsUserLocation = true
-            centerViewOnUserLocation()
-            break
-        case .denied:
-            // Show alert and instruct
-            break
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-            break
-        case .restricted:
-            // User has parental controls denying location
-            break
-        case .authorizedAlways:
-            break
-        @unknown default:
-            fatalError()
-        }
-    }
-    
     var sourceCord: CLLocationCoordinate2D?
     var destCord: CLLocationCoordinate2D?
     
@@ -84,17 +39,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             locationManager.startUpdatingLocation()
             centerViewOnUserLocation()
-            sourceCord = locationManager.location?.coordinate
-            
-            //Get start time
             //Get starting coordinates
-            //etc
+            sourceCord = locationManager.location?.coordinate
+            //Get start time
+            
         } else {
             // The user is ending a run
             
             // Get finish time
+            
             // Get finish coordinates
-            centerViewOnUserLocation()
             destCord = locationManager.location?.coordinate
             drawMap()
             // etc
@@ -106,6 +60,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             run["author"] = PFUser.current()!
             //run["miles"] = currentDistance
             run["content"] = "  just ran 7 miles"
+            // run["time"] = finish - start
             
             run.saveInBackground()
         }
@@ -155,6 +110,51 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         PFUser.logOutInBackground()
         UserDefaults.standard.set(false, forKey: "userLoggedIn")
         self.dismiss(animated: false, completion: nil)
+    }
+    
+    func setupLocationManager(){
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    //        locationManager.distanceFilter = kCLDistanceFilterNone
+    }
+    func centerViewOnUserLocation(){
+        if let location = locationManager.location?.coordinate{
+            let reigon = MKCoordinateRegion.init(center: location, latitudinalMeters: 500, longitudinalMeters: 500)
+            mapView.setRegion(reigon, animated: true)
+        }
+    }
+    func checkLocationServices(){
+        if CLLocationManager.locationServicesEnabled(){
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            // Tell the user that their location services are disabled
+            print("Location services are disabled.")
+        }
+    }
+
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus(){
+        case .authorizedWhenInUse:
+            // Everything checks out
+            print("Show User Location Activated!")
+            mapView.showsUserLocation = true
+            centerViewOnUserLocation()
+            break
+        case .denied:
+            // Show alert and instruct
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            break
+        case .restricted:
+            // User has parental controls denying location
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            fatalError()
+        }
     }
 
 }
