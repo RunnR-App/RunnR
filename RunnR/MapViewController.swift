@@ -23,10 +23,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         checkLocationServices()
         mapView.delegate = self
-        centerViewOnUserLocation()
         
         runButton.backgroundColor = UIColor.green
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        centerViewOnUserLocation()
     }
     
     var sourceCord: CLLocationCoordinate2D?
@@ -49,6 +51,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             destCord = locationManager.location?.coordinate
             
             drawMap()
+            centerViewOnUserLocation()
             // draw map func does everything needed to complete run and post to db
             // does all the final calcualtions for distance and time after response
             
@@ -84,6 +87,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             let run = PFObject(className: "Runs")
             run["author"] = PFUser.current()!
+            run["username"] = PFUser.current()?.username
             
             // run["time"] = finish - start
             let timeInterval: Double = self.startTime!.timeIntervalSinceNow
