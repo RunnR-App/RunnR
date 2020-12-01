@@ -29,11 +29,9 @@ Track information when you're on the run, and share it with your friends. RunnR 
 **Required Must-have Stories**
 
 - [x] Create an account / login
-- [ ] User can start and stop a run 
+- [x] User can start and stop a run 
 - [x] Data about user personal activity / exersises
-- [ ] User can add friends
-- [ ] User can see friends recent workouts
-- [ ] User can compare workout info with their friends
+- [x] User can see friends recent workouts
 
 **Optional Nice-to-have Stories**
 
