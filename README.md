@@ -29,7 +29,8 @@ Track information when you're on the run, and share it with your friends. RunnR 
 **Required Must-have Stories**
 
 - [x] Create an account / login
-- [x] User can start and stop a run 
+- [x] User can start and stop a run
+- [x] Displays path after run is over
 - [x] Data about user personal activity / exersises
 - [x] User can see friends recent workouts
 
@@ -198,6 +199,11 @@ Track information when you're on the run, and share it with your friends. RunnR 
   - [x] Created table view setup for entire app
   <br><img src="http://g.recordit.co/WXvYWWTxlj.gif" width=250><br>
  ## Sprint 4 (Final):
+  - [x] Run button added
+  - [x] Implemented run tracking and polyline
+  - [x] Run metrics tracked: Distance(Mi), Time(Hr), Speed(Mph)
+  - [x] Populated main feed with data by all RunnR members
+  - [x] Profile page displays cummulative member data
  <img src="http://g.recordit.co/YsC6mbp6Hb.gif" width=250>
  <img src="http://g.recordit.co/CFtdchz4tA.gif" width=250><br>
 
